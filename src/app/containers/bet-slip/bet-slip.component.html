@@ -1,0 +1,16 @@
+<div class="bet-slip">
+  <gr-ball [disabled]="true" [color]="color" [value]="optionSelected">{{optionSelected}}</gr-ball>
+  <div [formGroup]="betForm" class="bet-slip__form-container">
+    <div class="bet-slip__bet-prefix">1.5x</div>
+    <input class="bet-slip__bet-input" formControlName="bet" type="number">
+    <button class="bet-slip__ok-btn" type="submit">Ok</button>
+  </div>
+  <div class="form-error"
+      *ngIf="betField.invalid && betField.dirty && betField.errors.required">El valor es requerido</div>
+  <div class="form-error"
+      *ngIf="betField.invalid && betField.dirty && betField.errors.min">El valor mínimo es 5€</div>
+  <div class="bet-slip__amount">
+    Total: {{total || 0}}€
+  </div>
+  <button (click)="sentBet()" class="bet-slip__place-bet-btn" [disabled]="!optionSelected || betForm.invalid">Place bet</button>
+</div>

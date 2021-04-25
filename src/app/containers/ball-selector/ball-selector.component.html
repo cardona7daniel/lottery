@@ -1,0 +1,18 @@
+<div class="ball-selector">
+  <div class="ball-selector__container">
+    <div class="ball-selector__ball-group-container">
+      <h3>Numbers</h3>
+      <gr-ball-group class="ball-selector__ball-group" [value]="selectedValue" (valueChange)="selectedValueChange($event)">
+        <gr-ball
+          *ngFor="let item of betService.betValues; trackBy:trackByItems"
+          [color]="item.color"
+          [value]="item.value">{{item.value}}</gr-ball>
+      </gr-ball-group>
+      <span class="ball-selector__clear-selection" (click)="clearSelection()">Clear selection</span>
+      <gr-result [selectedColor]="selectedColor" [selectedValue]="selectedValue"></gr-result>
+    </div>
+    <div class="ball-selector__bet-slip-container">
+      <gr-bet-slip [color]="selectedColor" [optionSelected]="selectedValue"></gr-bet-slip>
+    </div>
+  </div>
+</div>

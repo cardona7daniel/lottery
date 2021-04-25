@@ -1,0 +1,9 @@
+@import './variables';
+
+@mixin btn-variants() {
+  @each $variant in $variants {
+    &--#{$variant} {
+      background-color: map-get($backgrounds, $variant);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<button
+  class="gr-ball"
+  [ngClass]="{
+    'gr-ball--red': color === 'red',
+    'gr-ball--green': color === 'green',
+    'gr-ball--yellow': color === 'yellow',
+    'gr-ball--beige': color === 'beige',
+    'gr-ball--blue': color === 'blue',
+    'gr-ball--pink': color === 'pink'}"
+  (click)="onChange()">
+  <ng-content></ng-content>
+</button>

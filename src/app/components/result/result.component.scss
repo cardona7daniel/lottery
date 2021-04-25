@@ -1,0 +1,13 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--won {
+    color: green;
+  }
+
+  &--lost {
+    color: red;
+  }
+}

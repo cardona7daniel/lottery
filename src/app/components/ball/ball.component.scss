@@ -1,0 +1,23 @@
+@import '../../scss/mixins.scss';
+
+:host ::ng-deep {
+  .gr-ball {
+
+    @include btn-variants();
+
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

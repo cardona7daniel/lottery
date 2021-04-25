@@ -1,0 +1,9 @@
+<div *ngIf="shouldShowFinalResult" class="result">
+  <h4>Result</h4>
+  <h5>You have selected: </h5>
+  <gr-ball [disabled]="true" [color]="selectedColor" [value]="selectedValue">{{selectedValue}}</gr-ball>
+  <h5>The winner number is: </h5>
+  <gr-ball [disabled]="true" [color]="winnerColor" [value]="winnerNumber">{{winnerNumber}}</gr-ball>
+  <h3 *ngIf="isWinner" class="result--won">You won: {{totalWon}}€</h3>
+  <h3 *ngIf="!isWinner" class="result--lost">You lost!!</h3>
+</div>
