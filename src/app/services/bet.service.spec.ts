@@ -19,4 +19,9 @@ describe('BetService', () => {
     expect(num).toBeLessThanOrEqual(10);
     expect(num).toBeGreaterThanOrEqual(1);
   });
+
+  it('should return color red when value is 1', () => {
+    const color = service.getBetColor(1);
+    expect(color).toBe('red');
+  });
 });

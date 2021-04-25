@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../components.module';
+import { BetService } from './../../services/bet.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
@@ -8,7 +10,8 @@ describe('ResultComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultComponent ]
+      imports: [ComponentsModule],
+      providers: [BetService]
     })
     .compileComponents();
   });

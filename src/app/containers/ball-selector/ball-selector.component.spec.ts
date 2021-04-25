@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { BetService } from './../../services/bet.service';
+import { ComponentsModule } from './../../components/components.module';
 import { BallSelectorComponent } from './ball-selector.component';
+import { BetSlipComponent } from '../bet-slip/bet-slip.component';
 
 describe('BallSelectorComponent', () => {
   let component: BallSelectorComponent;
@@ -8,7 +12,9 @@ describe('BallSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BallSelectorComponent ]
+      declarations: [ BallSelectorComponent, BetSlipComponent ],
+      imports: [ComponentsModule, ReactiveFormsModule],
+      providers: [BetService]
     })
     .compileComponents();
   });
@@ -21,5 +27,11 @@ describe('BallSelectorComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should clear all data', () => {
+    component.clearSelection();
+    expect(component.selectedValue).toBeNull();
+    expect(component.selectedColor).toBe('default');
   });
 });
